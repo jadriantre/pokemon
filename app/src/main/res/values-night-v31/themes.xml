@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="Theme.20230301JorgeEspinozaNYCSchools.Splash" parent="Theme.SplashScreen">
+        <item name="windowSplashScreenBackground">@color/gray</item>
+        <item name="windowSplashScreenAnimatedIcon">@drawable/logo</item>
+        <item name="windowSplashScreenAnimationDuration">3700</item>
+        <item name="postSplashScreenTheme">@style/Theme.Pokemon</item>
+        <item name="android:windowSplashScreenBrandingImage">@drawable/brand</item>
+    </style>
+</resources>

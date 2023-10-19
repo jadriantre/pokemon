@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/imCharacters"
+        android:enabled="true"
+        android:icon="@drawable/menu_characters"
+        android:title="@string/menu_characters" />
+    <item
+        android:id="@+id/imLocations"
+        android:enabled="true"
+        android:icon="@drawable/menu_locations"
+        android:title="@string/menu_locations" />
+</menu>
