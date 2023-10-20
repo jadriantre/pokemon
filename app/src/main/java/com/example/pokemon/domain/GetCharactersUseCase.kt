@@ -6,7 +6,7 @@ import com.example.pokemon.data.repository.GetCharactersRepository
 import com.example.pokemon.domain.model.CharacterDomain
 import javax.inject.Inject
 
-class GetCharactersUseCase@Inject constructor(
+class GetCharactersUseCase @Inject constructor(
     private val repository: GetCharactersRepository,
     private val network: InternetConnectionHelper) {
 

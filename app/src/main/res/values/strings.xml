@@ -3,4 +3,5 @@
     <string name="menu_characters">Characters</string>
     <string name="menu_locations">My Locations</string>
     <string name="internet_connection">No internet connection, please connect your device and try again.</string>
+    <string name="permission_request">You must grant location permission to use this section, if you want try again tap here!</string>
 </resources>

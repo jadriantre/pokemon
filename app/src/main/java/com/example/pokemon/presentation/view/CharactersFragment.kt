@@ -12,6 +12,7 @@ import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.pokemon.databinding.FragmentCharactersBinding
 import com.example.pokemon.presentation.adapter.CharacterAdapter
+import com.example.pokemon.presentation.util.Animation
 import com.example.pokemon.presentation.viewmodel.MainActivityViewModel
 import dagger.hilt.android.AndroidEntryPoint
 import io.reactivex.disposables.Disposable
@@ -21,12 +22,8 @@ class CharactersFragment: Fragment() {
 
     private val mainActivityViewModel: MainActivityViewModel by activityViewModels()
     private var _binding: FragmentCharactersBinding? = null
-    private lateinit var disposable: Disposable
     private val binding get() = _binding!!
-
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-    }
+    private var disposable: Disposable? = null
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -34,7 +31,6 @@ class CharactersFragment: Fragment() {
     ): View? {
         _binding = FragmentCharactersBinding.inflate(inflater, container, false)
         val view = binding.root
-        val navController = findNavController()
 
         binding.rcCharacters.layoutManager = LinearLayoutManager( this.requireContext() )
 
@@ -42,7 +38,15 @@ class CharactersFragment: Fragment() {
             val adapter = CharacterAdapter(it)
             binding.rcCharacters.adapter = adapter
             disposable = adapter.clickEvent.subscribe {
-                onCharacterSelected(it.url)
+                onCharacterSelected(it.name, it.url)
+            }
+        } )
+
+        mainActivityViewModel.charactersListObservable.observe( viewLifecycleOwner, Observer { it ->
+            val adapter = CharacterAdapter(it)
+            binding.rcCharacters.adapter = adapter
+            disposable = adapter.clickEvent.subscribe {
+                onCharacterSelected(it.name, it.url)
             }
         } )
 
@@ -61,15 +65,15 @@ class CharactersFragment: Fragment() {
         return view
     }
 
-    private fun onCharacterSelected(url: String)
+    private fun onCharacterSelected(name: String, url: String)
     {
-
+        val navController = findNavController()
+        navController.navigate( CharactersFragmentDirections.actionCharactersFragmentToCharacterDetailFragment(name, url), Animation.navOptions)
     }
 
     override fun onDestroy() {
         super.onDestroy()
-        if(disposable!= null)
-            disposable.dispose()
+        disposable?.dispose()
     }
 
 }

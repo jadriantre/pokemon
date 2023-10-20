@@ -10,8 +10,9 @@ class CharacterViewHolder(view: View): RecyclerView.ViewHolder(view) {
 
     private val binding = CharacterAdapterBinding.bind(view)
 
-    fun render(school: CharacterDomain, click: PublishSubject<CharacterDomain>) {
-        binding.tvName.text = school.name
-        binding.cvSchool.setOnClickListener { click.onNext(school) }
+    fun render(character: CharacterDomain, click: PublishSubject<CharacterDomain>) {
+        binding.tvName.text = character.name
+        binding.circularImageView.setImageOrName("", character.name)
+        binding.cv.setOnClickListener { click.onNext(character) }
     }
 }

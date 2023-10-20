@@ -4,10 +4,10 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".presentation.view.CharactersFragment">
+    tools:context=".presentation.view.LocationFragment">
 
     <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/rcCharacters"
+        android:id="@+id/rcLocations"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:padding="5dp"
@@ -19,26 +19,16 @@
 
 
     <com.google.android.material.floatingactionbutton.ExtendedFloatingActionButton
-        android:id="@+id/efabRefresh"
+        android:id="@+id/efabRequestPermission"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_margin="16dp"
         android:layout_gravity="center"
-        android:text="@string/internet_connection"
+        android:text="@string/permission_request"
         app:backgroundTint="@color/bgd_rows"
         app:icon="@drawable/icon_refresh"
-        android:maxLines="3"
+        android:maxLines="5"
         android:ellipsize="end"
-        android:visibility="gone"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent"/>
-
-    <ProgressBar
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/pb"
         android:visibility="gone"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"

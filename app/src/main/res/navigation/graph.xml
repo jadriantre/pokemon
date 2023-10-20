@@ -9,5 +9,29 @@
         android:id="@+id/charactersFragment"
         android:name="com.example.pokemon.presentation.view.CharactersFragment"
         android:label="fragment_characters"
-        tools:layout="@layout/fragment_characters" />
+        tools:layout="@layout/fragment_characters" >
+        <action
+            android:id="@+id/action_charactersFragment_to_characterDetailFragment"
+            app:destination="@id/characterDetailFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/characterDetailFragment"
+        android:name="com.example.pokemon.presentation.view.CharacterDetailFragment"
+        android:label="fragment_character_detail"
+        tools:layout="@layout/fragment_character_detail" >
+        <argument
+            android:name="name"
+            app:argType="string"
+            android:defaultValue="name" />
+        <argument
+            android:name="url"
+            app:argType="string"
+            android:defaultValue="url" />
+
+    </fragment>
+    <fragment
+        android:id="@+id/locationFragment"
+        android:name="com.example.pokemon.presentation.view.LocationFragment"
+        android:label="fragment_location"
+        tools:layout="@layout/fragment_location" />
 </navigation>

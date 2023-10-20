@@ -14,7 +14,7 @@
         <!-- Customize your theme here. -->
     </style>
 
-    <style name="backgroundScores">
+    <style name="backgroundCharacterDetail">
         <item name="android:background">@color/black</item>
     </style>
 

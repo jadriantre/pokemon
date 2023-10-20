@@ -18,26 +18,24 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:padding="8dp"
-            android:orientation="horizontal">
-
-            <com.example.pokemon.presentation.util.CircularImage
-                android:id="@+id/circularImageView"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                app:placeholder="@drawable/placeholder"
-                app:initialsBackground="@color/gray"
-                app:initialsTextColor="@color/gray"/>
+            android:orientation="vertical">
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:id="@+id/tvName"
-                android:textSize="21sp"
+                android:id="@+id/tvLocation"
+                android:textSize="20sp"
                 android:textStyle="bold"
-                android:layout_marginStart="10dp"
                 android:maxLines="1"
-                android:ellipsize="end"
-                android:gravity="center_vertical"/>
+                android:ellipsize="end"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/tvDate"
+                android:textSize="16sp"
+                android:maxLines="1"
+                android:ellipsize="end"/>
 
         </LinearLayout>
 
